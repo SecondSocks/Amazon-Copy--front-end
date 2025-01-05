@@ -4,11 +4,12 @@ import {saveToStorage} from '@/services/auth/auth.hepler'
 import {IAuthResponse, IEmailPassword} from '@/store/user/user.interface'
 import axios from 'axios'
 import Cookies from 'js-cookie'
+import { URL } from '@/config/url.config'
 
 class AuthService {
 	async auth(type: 'login' | 'register', data: IEmailPassword) {
 		const response = await instance<IAuthResponse>({
-			url: `/auth/${type}`,
+			url: `${URL.AUTH[type]}`,
 			method: 'POST',
 			data
 		})

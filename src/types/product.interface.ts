@@ -1,5 +1,5 @@
-import {ICategory} from '@/types/category.interface'
-import {IReview} from '@/types/review.interface'
+import { ICategory } from '@/types/category.interface'
+import { IReview } from '@/types/review.interface'
 
 export interface IProduct {
 	id: string
@@ -15,4 +15,26 @@ export interface IProduct {
 
 export interface IProductDetails {
 	product: IProduct
+}
+
+export interface IProductResponse {
+	name: string
+	price: number
+	description?: string
+	images: string[]
+	categoryId: string
+}
+
+export type TypeProductDataFilters = {
+	sort?: EnumProductSort
+	searchTerm?: string
+	page?: string | number
+	perPage?: string | number
+}
+
+export enum EnumProductSort {
+	HIGH_PRICE = 'high-price',
+	LOW_PRICE = 'low-price',
+	NEWEST = 'newest',
+	OLDEST = 'oldest'
 }

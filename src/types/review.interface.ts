@@ -7,3 +7,8 @@ export interface IReview {
 	text: string
 	createdAt: Date
 }
+
+export interface IReviewResponse {
+	rating: number
+	text: string
+}

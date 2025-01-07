@@ -1,5 +1,9 @@
-export default function HomePage() {
-	return <div>
-		<h1 className='text-3xl bold underline'>Home</h1>
-	</div>
+function HomePage() {
+	return (
+		<div>
+			<h1 className='text-3xl font-bold underline text-white'>Home Page</h1>
+		</div>
+	)
 }
+
+export default HomePage

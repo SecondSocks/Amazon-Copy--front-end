@@ -3,7 +3,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import { errorCatch } from '@/api/api.helper'
 
 import { IAuthResponse, IEmailPassword } from './user.interface'
-import { removeFromStorage } from '@/services/auth/auth.hepler'
+import { removeFromStorage } from '@/services/auth/auth.helper'
 import { authService } from '@/services/auth/auth.service'
 
 export const register = createAsyncThunk<IAuthResponse, IEmailPassword>(

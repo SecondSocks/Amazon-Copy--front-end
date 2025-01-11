@@ -3,6 +3,7 @@ import type { Config } from 'tailwindcss'
 import { COLORS } from './src/constants/color.constant'
 
 export default {
+	mode: 'jit',
 	content: [
 		'./src/pages/**/*.{js,ts,jsx,tsx,mdx}',
 		'./src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,7 +11,7 @@ export default {
 	],
 	theme: {
 		extend: {
-			COLORS,
+			colors: COLORS,
 			fontSize: {
 				xs: '0.82rem',
 				sm: '0.98rem',

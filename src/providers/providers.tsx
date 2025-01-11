@@ -1,12 +1,8 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { AppProps } from 'next/app'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
 
 import { persistor, store } from '@/store/store'
-
-import AuthProvider from './auth-provider/AuthProvider'
-import { TypeComponentAuthFields } from './auth-provider/auth-page.types'
 
 const queryClient = new QueryClient({
 	defaultOptions: {
@@ -16,10 +12,7 @@ const queryClient = new QueryClient({
 	}
 })
 
-export function Providers({
-	children: children,
-	Component
-}: AppProps & TypeComponentAuthFields) {
+export function Providers(children: React.ReactNode) {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<Provider store={store}>
@@ -27,7 +20,7 @@ export function Providers({
 					loading={null}
 					persistor={persistor}
 				>
-					<AuthProvider Component={Component}>{children}</AuthProvider>
+					{children}
 				</PersistGate>
 			</Provider>
 		</QueryClientProvider>

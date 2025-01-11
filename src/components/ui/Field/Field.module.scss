@@ -1,0 +1,19 @@
+.field {
+	> span {
+		@apply flex items-center block mb-2;
+	}
+
+	> input {
+		@apply rounded-xl border  border-solid focus:border-primary px-4 py-2 w-full outline-none transition-all duration-500;
+		border-width: 2px;
+	}
+}
+
+.inputError {
+	@apply rounded-xl border border-red-600 border-solid px-4 py-2 w-full outline-none transition-all duration-500;
+	border-width: 2px;
+}
+
+.error {
+	@apply text-red-600 mt-1;
+}

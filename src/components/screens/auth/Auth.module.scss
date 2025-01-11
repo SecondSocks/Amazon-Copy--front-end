@@ -1,0 +1,11 @@
+.form {
+	@apply flex flex-col items-center rounded-lg bg-gray-100 shadow-2xl m-auto p-8;
+
+	> header {
+		@apply text-center mb-5;
+	}
+
+	> div {
+		@apply mb-4;
+	}
+}

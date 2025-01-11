@@ -1,3 +1,9 @@
+import { Metadata } from 'next'
+
+import { Meta } from '@/constants/seo.constant'
+
+export const metadata: Metadata = Meta
+
 function HomePage() {
 	return (
 		<div>

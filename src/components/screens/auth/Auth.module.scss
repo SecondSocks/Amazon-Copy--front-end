@@ -2,10 +2,18 @@
 	@apply flex flex-col items-center rounded-lg bg-gray-100 shadow-2xl m-auto p-8;
 
 	> header {
-		@apply text-center mb-5;
+		@apply text-center mb-5 flex justify-evenly w-full;
+
+		> div {
+			@apply pb-1;
+		}
 	}
 
 	> div {
 		@apply mb-4;
 	}
+}
+
+.active {
+	border-bottom: #ff9902 2.5px solid;
 }

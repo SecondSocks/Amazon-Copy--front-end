@@ -2,14 +2,12 @@ import { Metadata } from 'next'
 
 import { Meta } from '@/constants/seo.constant'
 
+import { Home } from '@/screens/Home'
+
 export const metadata: Metadata = Meta
 
 function HomePage() {
-	return (
-		<div>
-			<h1 className='text-3xl font-bold underline text-white'>Home Page</h1>
-		</div>
-	)
+	return <Home />
 }
 
 export default HomePage

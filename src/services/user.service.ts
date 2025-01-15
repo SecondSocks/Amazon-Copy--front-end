@@ -1,15 +1,17 @@
-import {instance} from '@/api/api.interceptor'
+import { IFullUser, IUser, IUserResponse } from '@/types/user.types'
+
 import { URL } from '@/config/url.config'
-import {IUser, IUserResponse} from '@/types/user.types'
+
+import { instance } from '@/api/api.interceptor'
 
 class UserService {
 	async getProfile() {
-		return instance<IUser[]>({
+		return instance<IFullUser>({
 			url: URL.USER['profile'],
 			method: 'GET'
 		})
 	}
-	
+
 	async updateProfile(data: IUserResponse) {
 		return instance<IUser>({
 			url: URL.USER['profile'],
@@ -17,7 +19,7 @@ class UserService {
 			data
 		})
 	}
-	
+
 	async toggleFavorite(productId: string) {
 		return instance<IUser>({
 			url: `${URL.USER['toggle-favorite']}/${productId}`,

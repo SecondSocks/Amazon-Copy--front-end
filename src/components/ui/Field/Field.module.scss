@@ -4,7 +4,7 @@
 	}
 
 	> input {
-		@apply rounded-xl border  border-solid focus:border-primary px-4 py-2 w-full outline-none transition-all duration-500;
+		@apply rounded-xl border  border-solid focus:border-primary px-4 py-2 w-full outline-none transition-all duration-500 bg-gray-200;
 		border-width: 2px;
 	}
 }

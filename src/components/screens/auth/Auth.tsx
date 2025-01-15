@@ -1,12 +1,12 @@
 'use client'
 
+import cn from 'clsx'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { MdOutlineMail } from 'react-icons/md'
 import { RiLockPasswordLine } from 'react-icons/ri'
 
 import Field from '@/ui/Field/Field'
-import { Heading } from '@/ui/Heading'
 import { Button } from '@/ui/buttons/Button'
 
 import Meta from '@/config/Meta'
@@ -17,8 +17,11 @@ import { useActions } from '@/hooks/useActions'
 import { useAuth } from '@/hooks/useAuth'
 
 import styles from './Auth.module.scss'
+import { useAuthRedirect } from './useAuthRedirect'
 
 export function Auth() {
+	useAuthRedirect()
+
 	const { isLoading } = useAuth()
 	const { login, register } = useActions()
 
@@ -46,7 +49,44 @@ export function Auth() {
 					className={styles.form}
 				>
 					<header>
-						<Heading className='capitalize '>{type}</Heading>
+						<div
+							className={cn({
+								[styles.active]: type === 'login'
+							})}
+						>
+							<label
+								htmlFor='login'
+								className='font-semibold capitalize text-xl cursor-pointer'
+							>
+								Login
+							</label>
+							<input
+								id='login'
+								type='radio'
+								className='hidden'
+								checked={type === 'login'}
+								onChange={() => setType('login')}
+							/>
+						</div>
+						<div
+							className={cn({
+								[styles.active]: type === 'register'
+							})}
+						>
+							<label
+								htmlFor='register'
+								className='font-semibold capitalize text-xl cursor-pointer'
+							>
+								Register
+							</label>
+							<input
+								id='register'
+								type='radio'
+								className='hidden'
+								checked={type === 'register'}
+								onChange={() => setType('register')}
+							/>
+						</div>
 					</header>
 					<Field
 						{...formRegister('email', {

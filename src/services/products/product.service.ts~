@@ -14,7 +14,7 @@ class ProductService {
 		return instance<TypePaginationProducts>({
 			url: URL.PRODUCTS['ROOT'],
 			method: 'GET',
-			params: queryData,
+			params: queryData
 		})
 	}
 

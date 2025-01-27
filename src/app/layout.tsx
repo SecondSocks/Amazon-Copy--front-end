@@ -5,6 +5,7 @@ import { Golos_Text } from 'next/font/google'
 import { PropsWithChildren } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+import Head from 'next/head'
 
 import AuthProvider from '@/providers/auth-provider/AuthProvider'
 import { TypeRoles } from '@/providers/auth-provider/auth-page.types'
@@ -26,6 +27,9 @@ export default function RootLayout({
 }: PropsWithChildren<TypeRoles>) {
 	return (
 		<html lang='en'>
+			<Head>
+				<title>Amazon 2.0</title>
+			</Head>
 			<body className={`${golosText.className} antialiased`}>
 				<QueryClientProvider client={queryClient}>
 					<Provider store={store}>

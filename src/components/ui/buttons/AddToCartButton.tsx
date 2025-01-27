@@ -1,3 +1,5 @@
+'use client'
+
 import { BsCartCheck, BsCartCheckFill } from 'react-icons/bs'
 
 import { COLORS } from '@/constants/color.constant'

@@ -4,6 +4,7 @@ import { Catalog } from '@/ui/catalog/Catalog'
 import { TypePaginationProducts } from '@/types/product.interface'
 
 import Meta from '@/config/Meta'
+import {GetStaticProps} from 'next'
 
 export function Home({ products, length }: Readonly<TypePaginationProducts>) {
 	return (

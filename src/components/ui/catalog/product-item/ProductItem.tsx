@@ -5,7 +5,9 @@ import { FavoriteButton } from '@/ui/buttons/FavoriteButton'
 
 import { IProduct } from '@/types/product.interface'
 
-export function ProductItem(product: IProduct) {
+import { ProductRating } from './ProductRating'
+
+export function ProductItem({ product }: Readonly<{ product: IProduct }>) {
 	return (
 		<div>
 			<div>
@@ -20,7 +22,7 @@ export function ProductItem(product: IProduct) {
 			</div>
 			<h3>{product.name}</h3>
 			<h5>{product.category.name}</h5>
-			<ProductRating rating={product.reviews} />
+			<ProductRating product={product} />
 			<h4>{product.price}</h4>
 		</div>
 	)

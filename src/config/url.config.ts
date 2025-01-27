@@ -11,7 +11,7 @@ export const URL = {
 	},
 	USER: {
 		profile: `${API}/users/profile`,
-		'toggle-favorite': `${API}/users/profile/favorites`
+		'toggle-favorite': `${API}/users/profile/favЁorites`
 	},
 	CATEGORY: {
 		ROOT: `${API}/categories`,
@@ -19,7 +19,8 @@ export const URL = {
 	},
 	REVIEW: {
 		ROOT: `${API}/review`,
-		create: `${API}/review/leave`
+		create: `${API}/review/leave`,
+		average: `${API}/review/average-by-product`
 	},
 	PRODUCTS: {
 		ROOT: `${API}/products`,

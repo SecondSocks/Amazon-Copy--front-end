@@ -1,9 +1,9 @@
-import {IUser} from '@/types/user.types'
+import { IUser } from '@/types/user.types'
 
 export interface IReview {
 	user: IUser
 	id: string
-	rating: string
+	rating: number
 	text: string
 	createdAt: Date
 }

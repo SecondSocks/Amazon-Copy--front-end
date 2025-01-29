@@ -1,0 +1,7 @@
+.item {
+	@apply rounded-xl relative overflow-hidden bg-white;
+
+	.buttons {
+		@apply absolute top-2 right-2 z-10;
+	}
+}

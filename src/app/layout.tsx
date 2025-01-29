@@ -2,10 +2,13 @@
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Golos_Text } from 'next/font/google'
+import Head from 'next/head'
 import { PropsWithChildren } from 'react'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
-import Head from 'next/head'
+
+import { Header } from '@/ui/Header/Header'
+import { Sidebar } from '@/ui/Sidebar/Sidebar'
 
 import AuthProvider from '@/providers/auth-provider/AuthProvider'
 import { TypeRoles } from '@/providers/auth-provider/auth-page.types'
@@ -37,7 +40,18 @@ export default function RootLayout({
 							loading={null}
 							persistor={persistor}
 						>
-							<AuthProvider Component={{ isOnlyUser }}>{children}</AuthProvider>
+							<AuthProvider Component={{ isOnlyUser }}>
+								<Header />
+								<div
+									className='grid'
+									style={{
+										gridTemplateColumns: '1fr 6fr'
+									}}
+								>
+									<Sidebar />
+									<main>{children}</main>
+								</div>
+							</AuthProvider>
 						</PersistGate>
 					</Provider>
 				</QueryClientProvider>

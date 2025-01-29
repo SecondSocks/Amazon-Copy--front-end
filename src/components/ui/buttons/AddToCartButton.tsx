@@ -29,7 +29,7 @@ export function AddToCartButton(product: Readonly<IProduct>) {
 				{currentElement ? (
 					<BsCartCheckFill color={COLORS.primary} />
 				) : (
-					<BsCartCheck />
+					<BsCartCheck color={COLORS.secondary} />
 				)}
 			</button>
 		</div>

@@ -1,35 +1,36 @@
 'use client'
 
-import { useQuery } from '@tanstack/react-query'
+import { useState } from 'react'
 import { Rating } from 'react-simple-star-rating'
 
 import { IProduct } from '@/types/product.interface'
 
-import { reviewService } from '@/services/review.service'
-
 export function ProductRating({ product }: Readonly<{ product: IProduct }>) {
-	const { data: rating } = useQuery({
-		queryKey: ['get product rating', product.id],
-		queryFn: () => reviewService.getAverageByProduct(product.id),
-		select: ({ data }) => data
-	})
-
-	console.log(rating)
+	//const { rating, isLoading } = useRating(product.id)
+	const [rating] = useState<number>(
+		Math.round(
+			product.reviews.reduce((acc, review) => acc + review.rating, 0) /
+				product.reviews.length
+		)
+	)
 
 	return (
-		<div className=''>
-			<Rating
-				readonly
-				initialValue={rating}
-				SVGstyle={{
-					display: 'inline-block'
-				}}
-				size={34}
-				allowFraction
-				transition
-			/>
+		<div className='flex items-center justify-between mb-2'>
+			<span className='flex items-center justify-center gap-2 mr-1'>
+				<Rating
+					readonly
+					initialValue={rating}
+					SVGstyle={{
+						display: 'inline-block'
+					}}
+					size={20}
+					allowFraction
+					transition
+				/>
+				<p className='text-yellow-500 text-sm text-center'>{rating}</p>
+			</span>
 			<span>
-				<p>({rating?.toString()} reviews)</p>
+				<p>({product.reviews.length} reviews)</p>
 			</span>
 		</div>
 	)

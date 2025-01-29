@@ -20,7 +20,11 @@ export function FavoriteButton({ productId }: Readonly<{ productId: string }>) {
 	return (
 		<div>
 			<button onClick={() => toggleFavorite()}>
-				{isExist ? <AiFillHeart color={COLORS.primary} /> : <AiOutlineHeart />}
+				{isExist ? (
+					<AiFillHeart color={COLORS.favorite} />
+				) : (
+					<AiOutlineHeart color={COLORS.secondary} />
+				)}
 			</button>
 		</div>
 	)

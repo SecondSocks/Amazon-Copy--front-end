@@ -9,15 +9,35 @@ import {
 	persistReducer,
 	persistStore
 } from 'redux-persist'
-import storage from 'redux-persist/lib/storage'
+import createWebStorage from 'redux-persist/lib/storage/createWebStorage'
 
 import { cartSlice } from './cart/cart.slice'
 import { userSlice } from './user/user.slice'
 
+const createNoopStorage = () => {
+	return {
+		getItem(_key) {
+			return Promise.resolve(null)
+		},
+		setItem(_key, value) {
+			return Promise.resolve(value)
+		},
+		removeItem(_key) {
+			return Promise.resolve()
+		}
+	}
+}
+
+const storage =
+	typeof window !== 'undefined'
+		? createWebStorage('local')
+		: createNoopStorage()
+
 const persistConfig = {
 	key: 'amazon-v2',
 	storage,
-	whitelist: ['cart']
+	whitelist: ['cart', userSlice.name],
+	timeout: 1000
 }
 
 const rootReducer = combineReducers({

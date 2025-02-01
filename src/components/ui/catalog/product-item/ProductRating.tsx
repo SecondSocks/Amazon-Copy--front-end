@@ -15,7 +15,7 @@ export function ProductRating({ product }: Readonly<{ product: IProduct }>) {
 	)
 
 	return (
-		<div className='flex items-center justify-between mb-2'>
+		<div className='flex items-center mb-2'>
 			<span className='flex items-center justify-center gap-2 mr-1'>
 				<Rating
 					readonly
@@ -27,10 +27,10 @@ export function ProductRating({ product }: Readonly<{ product: IProduct }>) {
 					allowFraction
 					transition
 				/>
-				<p className='text-yellow-500 text-sm text-center'>{rating}</p>
+				<p className='text-yellow-500 text-[17px] text-center pt-1.5'>{rating}</p>
 			</span>
-			<span>
-				<p>({product.reviews.length} reviews)</p>
+			<span className='pt-1'>
+				<p className='text-xs'>({product.reviews.length} reviews)</p>
 			</span>
 		</div>
 	)

@@ -7,12 +7,7 @@
 	background-color: rgb(233, 233, 233);
 }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		@apply text-white;
-		background-color: rgb(31, 31, 31);
-	}
-}
+
 
 body {
 	font-family: Arial, Helvetica, sans-serif;

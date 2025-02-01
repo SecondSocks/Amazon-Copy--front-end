@@ -7,9 +7,6 @@ import { IInitialState } from './user.interface'
 
 const initialState: IInitialState = {
 	user: getLocalStore('user'),
-	// typeof window !== 'undefined' && localStorage.getItem('user')
-	// 	? JSON.parse(localStorage.getItem('user') || '{}')
-	// 	: null,
 	isLoading: false
 }
 

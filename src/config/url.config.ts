@@ -11,7 +11,7 @@ export const URL = {
 	},
 	USER: {
 		profile: `${API}/users/profile`,
-		'toggle-favorite': `${API}/users/profile/favЁorites`
+		'toggle-favorite': `${API}/users/profile/favorites`
 	},
 	CATEGORY: {
 		ROOT: `${API}/categories`,

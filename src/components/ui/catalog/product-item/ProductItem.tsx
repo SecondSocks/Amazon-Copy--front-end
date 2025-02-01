@@ -8,14 +8,13 @@ import { IProduct } from '@/types/product.interface'
 
 import { convertPrice } from '@/utils/convert-price'
 
-import styles from './ProductItem.module.scss'
 import { ProductRating } from './ProductRating'
 
 export function ProductItem({ product }: Readonly<{ product: IProduct }>) {
 	return (
 		<div className='flex flex-col w-[300px]'>
-			<div className={styles.item}>
-				<div className={styles.buttons}>
+			<div className='rounded-xl relative overflow-hidden bg-white'>
+				<div className='absolute top-2 right-3 z-10'>
 					<FavoriteButton productId={product.id} />
 					<AddToCartButton {...product} />
 				</div>
@@ -30,13 +29,13 @@ export function ProductItem({ product }: Readonly<{ product: IProduct }>) {
 			</div>
 			<Link
 				href={`/product/${product.slug}`}
-				className='mb-1 font-semibold text-xl'
+				className='mt-2 font-semibold text-xl'
 			>
 				{product.name}
 			</Link>
 			<Link
 				href={`/category/${product.category.slug}`}
-				className='text-cyan-400 text-sm mb-2'
+				className='text-cyan-400 text-xs mb-2'
 			>
 				{product.category.name}
 			</Link>

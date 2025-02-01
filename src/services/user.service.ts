@@ -1,3 +1,5 @@
+import Cookies from 'js-cookie'
+
 import { IFullUser, IUser, IUserResponse } from '@/types/user.types'
 
 import { URL } from '@/config/url.config'
@@ -6,6 +8,9 @@ import { instance } from '@/api/api.interceptor'
 
 class UserService {
 	async getProfile() {
+		const accessToken = Cookies.get('accessToken')
+		console.log(accessToken)
+
 		return instance<IFullUser>({
 			url: URL.USER['profile'],
 			method: 'GET'

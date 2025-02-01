@@ -22,6 +22,7 @@ import { useAuthRedirect } from './useAuthRedirect'
 export function Auth() {
 	useAuthRedirect()
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	const { isLoading } = useAuth()
 	const { login, register } = useActions()
 
@@ -112,7 +113,7 @@ export function Auth() {
 						Icon={RiLockPasswordLine}
 						placeholder='Enter your password'
 						type='password'
-						error={errors.email?.message}
+						error={errors.password?.message}
 						legend={'Password'}
 					/>
 					<Button variant='black'>

@@ -13,8 +13,8 @@ interface ICatalog {
 export function Catalog({ products, isLoading, title }: Readonly<ICatalog>) {
 	return (
 		<>
-			{title ? <Heading>{title}</Heading> : <Heading>Catalog</Heading>}
-			<section className='grid grid-cols-4 gap-10 py-8 px-0 justify-items-center'>
+			{title ? <Heading className='text-5xl'>{title}</Heading> : <Heading>Catalog</Heading>}
+			<section className='grid grid-cols-4 gap-10 mt-8 justify-items-center'>
 				{isLoading
 					? 'Loading...'
 					: products?.map(product => (

@@ -7,7 +7,7 @@ export const revalidate = 3600
 
 async function generateStaticParams() {
 	try {
-		const { data } = await productService.getAll({ page: 1, perPage: 10 })
+		const data = await productService.getAll({ page: 1, perPage: 4 })
 		return data ? { data } : null
 	} catch (error) {
 		errorCatch(error)

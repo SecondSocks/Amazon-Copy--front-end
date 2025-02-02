@@ -12,7 +12,7 @@ import { ProductRating } from './ProductRating'
 
 export function ProductItem({ product }: Readonly<{ product: IProduct }>) {
 	return (
-		<div className='flex flex-col w-[300px]'>
+		<div className='flex flex-col w-[300px] animate-scaleIn'>
 			<div className='rounded-xl relative overflow-hidden bg-white'>
 				<div className='absolute top-2 right-3 z-10'>
 					<FavoriteButton productId={product.id} />

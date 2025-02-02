@@ -11,11 +11,13 @@ import { instance } from '@/api/api.interceptor'
 
 class ProductService {
 	async getAll(queryData = {} as TypeProductDataFilters) {
-		return instance<TypePaginationProducts>({
+		const { data } = await instance<TypePaginationProducts>({
 			url: URL.PRODUCTS['ROOT'],
 			method: 'GET',
-			params: queryData,
+			params: queryData
 		})
+
+		return data
 	}
 
 	async getSimilar(id: string) {

@@ -6,6 +6,18 @@ const nextConfig: NextConfig = {
 		SERVER_URL: process.env.SERVER_URL,
 		APP_URL: process.env.APP_URL
 	},
+	async rewrites() {
+		return [
+			{
+				source: '/category/:slug',
+				destination: '/category/[slug]'
+			},
+			{
+				source: '/favicon.svg',
+				destination: '/public/favicon.svg'
+			}
+		]
+	},
 	images: {
 		remotePatterns: [
 			{
@@ -22,8 +34,19 @@ const nextConfig: NextConfig = {
 				protocol: 'https',
 				hostname: 'another-site.org',
 				pathname: '**'
+			},
+			{
+				protocol: 'https',
+				hostname: 'avatars.githubusercontent.com',
+				pathname: '**'
+			},
+			{
+				protocol: 'https',
+				hostname: 'new-site.com',
+				pathname: '**'
 			}
-		]
+		],
+		domains: ['picsum.photos']
 	}
 }
 

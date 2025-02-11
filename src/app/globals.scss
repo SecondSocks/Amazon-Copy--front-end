@@ -3,12 +3,27 @@
 @tailwind utilities;
 
 :root {
-	@apply text-secondary;
+	@apply text-secondary overflow-auto;
 	background-color: rgb(233, 233, 233);
 }
 
-
-
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Golos Text', sans-serif;
+}
+
+.disabled {
+	pointer-events: none;
+	cursor: default;
+	text-decoration: none;
+	opacity: 0.2 !important;
+}
+
+.open-menu {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.close-menu {
+	opacity: 0;
+	transform: scale(0.8);
 }
